@@ -1,0 +1,9 @@
+.bigScreen{
+    width: 600px;
+    height: 100px;
+    margin: 0% auto;
+    background: #7c52bf;
+}
+.bigScreen p{
+    padding-top: 2%;
+}

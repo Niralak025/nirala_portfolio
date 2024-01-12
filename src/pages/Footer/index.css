@@ -1,0 +1,9 @@
+.footerStyle{
+    background-color: black;
+    margin-block: 0px;
+    padding-block: 20px;
+}
+.footerTitleStyle{
+    text-align: center;
+    color: white;
+}

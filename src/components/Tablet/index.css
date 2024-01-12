@@ -1,0 +1,9 @@
+.tablet{
+    width: 300px;
+    height: 100px;
+    background: #cab9e5;
+    margin: 0 auto;
+}
+.tablet p {
+    padding-top: 2%;
+}
