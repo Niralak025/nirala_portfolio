@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/nirala_portfolio/static/css/main.b69486b6.css",
+    "main.js": "/nirala_portfolio/static/js/main.debcbf31.js",
+    "static/js/787.1ed0c42c.chunk.js": "/nirala_portfolio/static/js/787.1ed0c42c.chunk.js",
+    "static/media/nirala_1.jpg": "/nirala_portfolio/static/media/nirala_1.2dbdc0d1859338da445d.jpg",
+    "index.html": "/nirala_portfolio/index.html",
+    "main.b69486b6.css.map": "/nirala_portfolio/static/css/main.b69486b6.css.map",
+    "main.debcbf31.js.map": "/nirala_portfolio/static/js/main.debcbf31.js.map",
+    "787.1ed0c42c.chunk.js.map": "/nirala_portfolio/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b69486b6.css",
+    "static/js/main.debcbf31.js"
+  ]
+}
