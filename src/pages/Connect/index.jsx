@@ -35,13 +35,7 @@ const Connect = () => {
                     <h5 className="card-title titleStyle">Let's Talk!</h5>
                     <Stack
                         component="form"
-                        sx={
-                            {
-                                marginTop: '35px',
-                                backgroundColor: 'white',
-                                padding: '35px',
-                                borderRadius: '10px',
-                            }}
+                        className='formStyle'
                         spacing={{ xs: 2, sm: 3, md: 4, lg: 5, xl: 6 }}
                         noValidate
                         autoComplete="off"
@@ -66,7 +60,6 @@ const Connect = () => {
                             onChange={(text) => {
                                 setUserEmail(text?.target?.value)
                             }}
-                            style={{}}
                         />
 
                         <TextField
@@ -84,12 +77,7 @@ const Connect = () => {
                         <Button
                             variant="contained"
                             endIcon={<SendIcon />}
-                            style={{
-                                alignSelf: 'center',
-                                width: '50%',
-                                backgroundColor: '#124893',
-                                overflow: 'hidden'
-                            }}
+                            className='buttonStyle'
                             onClick={() => {
                                 sendEmail()
                             }}

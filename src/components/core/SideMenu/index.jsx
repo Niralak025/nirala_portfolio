@@ -2,15 +2,11 @@ import React from 'react'
 
 const SideMenu = () => {
 
-    // const handleClick = () => {
-    //     ref.current?.scrollIntoView({behavior: 'smooth'});
-    //       };
-          
     return (
         <div>
             <nav class="navbar bg-dark fixed-top" data-bs-theme="dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Dashboard</a>
+                    <a class="navbar-brand" href="#"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -24,7 +20,7 @@ const SideMenu = () => {
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="#">Introduction</a>
                                 </li>
-                                <li class="nav-item" onClick={()=>{
+                                <li class="nav-item" onClick={() => {
 
                                 }}>
                                     <a class="nav-link active" aria-current="page" href="#">Educations</a>
