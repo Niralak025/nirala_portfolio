@@ -1,9 +1,9 @@
 import React from 'react'
 import './index.css'
 
-const Educations = () => {
+const Educations = ({ educationRef }) => {
     return (
-        <div className='educations_main_container'>
+        <div className='educations_main_container' ref={educationRef}>
             <h1 className='fs-1'>Educations</h1>
             <div>
                 <ul className='list-group'>
