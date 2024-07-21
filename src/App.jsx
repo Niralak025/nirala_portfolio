@@ -12,8 +12,8 @@ const App = () => {
 
   return (
     <>
-      {/* <Home /> */}
-      <SideMenuRough/>
+      <Home />
+      {/* <SideMenuRough/> */}
     </>
   );
 }
