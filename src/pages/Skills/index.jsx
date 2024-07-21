@@ -1,11 +1,11 @@
 import React from 'react'
 import './index.css'
-const Skills = () => {
+const Skills = ({skillsRef}) => {
   const logoImageHeight = 40;
   const logoImageWidth = 50;
   return (
     <>
-      <div className='skills_main_container'>
+      <div className='skills_main_container' ref={skillsRef}>
         <h1 className='fs-1'>Skills</h1>
         <div>
           <ul>

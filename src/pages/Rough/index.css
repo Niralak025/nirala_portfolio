@@ -1,0 +1,28 @@
+body{
+    position: relative;
+}
+#Educations{
+    height: 500px;
+    width: 800px;
+    background-color: red;
+    margin-top: 100px;
+}
+#Hello-1{
+    height: 500px;
+    width: 800px;
+    background-color:yellow;
+    margin-top: 100px;
+}
+#Hello-2{
+    height: 500px;
+    width: 800px;
+    background-color:green;
+    margin-top: 100px;
+}
+.mainDivClass{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+}

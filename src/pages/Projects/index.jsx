@@ -1,10 +1,10 @@
 import React from 'react'
 import './index.css'
 
-const Projects = () => {
+const Projects = ({ projectRef }) => {
   return (
     <>
-      <div className='projects_main_container'>
+      <div className='projects_main_container' ref={projectRef}>
         <h1 className='fs-1'>Projects and Experience</h1>
         <div>
           <ul>
