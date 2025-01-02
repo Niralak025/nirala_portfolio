@@ -1,12 +1,16 @@
-import React from 'react'
-import './index.css'
+import React from 'react';
+import './index.css';
 
 const Footer = () => {
-  return (
-    <div className='footerStyle'>
-      <p className='text-light footerTitleStyle'> All &copy; Copyright <strong>Nirala Kumar</strong> 2023</p>
-    </div>
-  )
-}
+  const currentYear = new Date().getFullYear();
 
-export default Footer
+  return (
+    <footer className="footer-style">
+      <p className="footer-title-style">
+        &copy; {currentYear} <strong>Nirala Kumar</strong>. All rights reserved.
+      </p>
+    </footer>
+  );
+};
+
+export default Footer;

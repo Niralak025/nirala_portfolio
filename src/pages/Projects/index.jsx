@@ -1,35 +1,25 @@
-import React from 'react'
-import './index.css'
+import React from 'react';
+import './index.css';
 
 const Projects = ({ projectRef }) => {
-  return (
-    <>
-      <div className='projects_main_container' ref={projectRef}>
-        <h1 className='fs-1'>Projects and Experience</h1>
-        <div>
-          <ul>
-            <div className='projects_inner_container'>
-              <li>
-                <div className='inner_container'>
-                  <h1 className='h2'>WeChat</h1>
-                </div>
-              </li>
-              <li>
-                <div className='inner_container_2'>
-                  <h1 className='h2'>Advertisement Management</h1>
-                </div>
-              </li>
-              <li>
-                <div className='inner_container_3'>
-                  <h1 className='h2'>DemoApp</h1>
-                </div>
-              </li>
-            </div>
-          </ul>
-        </div>
-      </div>
-    </>
-  )
-}
+  const projectData = [
+    { name: 'WeChat', className: 'inner-container' },
+    { name: 'Advertisement Management', className: 'inner-container-2' },
+    { name: 'DemoApp', className: 'inner-container-3' },
+  ];
 
-export default Projects
+  return (
+    <div className="projects-main-container" ref={projectRef}>
+      <h1 className="projects-title">Projects and Experience</h1>
+      <div className="projects-list">
+        {projectData.map((project, index) => (
+          <div key={index} className={`project-item ${project.className}`}>
+            <h2 className="project-name">{project.name}</h2>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Projects;

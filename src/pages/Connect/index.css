@@ -1,67 +1,72 @@
-.connectImageStyle {
-    margin-left: 10%;
-    margin-block: 3%;
-}
-
-.innerCintainer {
+/* Main container styling */
+.connect-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     background-color: rgba(125, 182, 212, 0.6);
+    padding: 20px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    gap: 20px;
+}
+
+/* Image styling */
+.connect-image {
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Content container */
+.connect-content {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Title styling */
+.connect-title {
+    font-size: 2rem;
+    color: #124893;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+.connect-form {
     width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.contentContainer {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    width: 60%;
+/* Button styling */
+.connect-button {
+    background-color: #124893;
+    color: #fff;
+    width: 100%;
+    text-transform: none;
 }
 
-@media (max-width:512px) {
-    .contentContainer {
-        width: auto;
+/* Responsive design */
+@media (max-width: 768px) {
+    .connect-card {
+        flex-direction: column;
+    }
+
+    .connect-image {
+        width: 100%;
         height: auto;
     }
-}
 
-@media (max-width:512px) {
-    .innerCintainer {
-        position: relative;
-        display: block;
+    .connect-content {
         width: 100%;
-        height: fit-content;
+        padding: 20px;
     }
-
-    .connectImageStyle {
-        display: none;
-    }
-}
-
-.titleStyle {
-    text-align: center;
-    font-size: 50px;
-    color: #124893;
-}
-
-.inputDivStyle {
-    flex-direction: column;
-}
-
-.sendButtonStyle {
-    margin-top: '10%';
-}
-
-.formStyle {
-    background-color: white;
-    padding: 20px;
-    border-radius: 25px;
-    height: auto;
-}
-
-.buttonStyle {
-    background-color: #124893;
-    align-self: center;
-    width: 50%;
-    overflow: hidden;
 }
