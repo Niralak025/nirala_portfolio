@@ -8,6 +8,10 @@ const Skills = ({ skillsRef }) => {
       logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png',
     },
     {
+      name: 'React Redux',
+      logo: 'https://files.gitbook.com/v0/b/gitbook-legacy-files/o/spaces%2F-L5fXeqUzwsNMXiitz-3%2Favatar.png?alt=media',
+    },
+    {
       name: 'JavaScript',
       logo: 'https://pngset.com/images/javascript-logo-number-symbol-text-label-transparent-png-560960.png',
     },
