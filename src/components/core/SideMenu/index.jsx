@@ -1,18 +1,12 @@
 import React from 'react';
+import { sideMenuContent } from '../../../utils/globalConstant';
 
 const SideMenu = ({ onItemClick }) => {
-    const menuData = [
-        { id: 1, name: 'Introduction' },
-        { id: 2, name: 'Education' },
-        { id: 3, name: 'Skills' },
-        { id: 4, name: 'Projects and Experience' }
-    ];
-
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-dark fixed-top" data-bs-theme="dark">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">Nirala Kumar</a>
+                    <a className="navbar-brand" href="#">{sideMenuContent.brandName}</a>
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -31,7 +25,7 @@ const SideMenu = ({ onItemClick }) => {
                     >
                         <div className="offcanvas-header">
                             <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
-                                Nirala Kumar
+                                {sideMenuContent.brandName}
                             </h5>
                             <button
                                 type="button"
@@ -42,7 +36,7 @@ const SideMenu = ({ onItemClick }) => {
                         </div>
                         <div className="offcanvas-body">
                             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-                                {menuData.map((item) => (
+                                {sideMenuContent.menuItems.map((item) => (
                                     <li
                                         key={item.id}
                                         className="nav-item"

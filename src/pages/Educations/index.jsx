@@ -1,12 +1,12 @@
 import React from 'react'
 import './index.css'
 import EducationCardCell from '../../components/core/Card'
-import { educationCardData } from '../../utils/globalConstant'
+import { educationCardData, educationsContent } from '../../utils/globalConstant'
 
 const Educations = ({ educationRef }) => {
     return (
         <div className='educations_main_container' ref={educationRef}>
-            <h1 className='fs-1'>Educations</h1>
+            <h1 className='fs-1'>{educationsContent.heading}</h1>
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
                 {educationCardData.map((item, index) => (
                     <EducationCardCell

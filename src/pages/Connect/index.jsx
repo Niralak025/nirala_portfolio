@@ -4,6 +4,7 @@ import './index.css';
 import { Button, Stack, TextField } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import emailjs from '@emailjs/browser';
+import { connectContent } from '../../utils/globalConstant';
 
 const Connect = () => {
     const [formData, setFormData] = useState({ userName: '', userEmail: '', userMessage: '' });
@@ -14,14 +15,13 @@ const Connect = () => {
     };
 
     const sendEmail = async () => {
-        const serviceId = 'service_n56zm91';
-        const templateId = 'template_j7qu8nq';
+        const { serviceId, templateId, recipientEmail } = connectContent.emailjsConfig;
         try {
             await emailjs.send(serviceId, templateId, {
                 name: formData.userName,
                 message: formData.userMessage,
                 email: formData.userEmail,
-                recipient: 'nirala1rampura@gmail.com',
+                recipient: recipientEmail,
             });
         } catch (error) {
             console.error('Error sending email:', error);
@@ -31,7 +31,7 @@ const Connect = () => {
     return (
         <div className="connect-card">
             <div className="connect-content">
-                <h5 className="connect-title">Let's Talk!</h5>
+                <h5 className="connect-title">{connectContent.title}</h5>
                 <Stack
                     component="form"
                     className="connect-form"
@@ -42,7 +42,7 @@ const Connect = () => {
                     <TextField
                         InputLabelProps={{ style: { color: '#124893' } }}
                         name="userName"
-                        label="Name"
+                        label={connectContent.nameLabel}
                         variant="standard"
                         required
                         onChange={handleChange}
@@ -50,7 +50,7 @@ const Connect = () => {
                     <TextField
                         InputLabelProps={{ style: { color: '#124893' } }}
                         name="userEmail"
-                        label="Email"
+                        label={connectContent.emailLabel}
                         variant="standard"
                         required
                         onChange={handleChange}
@@ -58,8 +58,8 @@ const Connect = () => {
                     <TextField
                         InputLabelProps={{ style: { color: '#124893' } }}
                         name="userMessage"
-                        label="Message"
-                        placeholder="Message..."
+                        label={connectContent.messageLabel}
+                        placeholder={connectContent.messagePlaceholder}
                         multiline
                         maxRows={4}
                         variant="standard"
@@ -71,7 +71,7 @@ const Connect = () => {
                         className="connect-button"
                         onClick={sendEmail}
                     >
-                        Send
+                        {connectContent.sendButtonText}
                     </Button>
                 </Stack>
             </div>

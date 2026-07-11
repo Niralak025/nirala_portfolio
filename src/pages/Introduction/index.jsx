@@ -1,21 +1,54 @@
-import React from 'react'
-import './index.css'
-import niralaImage from '../../assets/images/nirala_bgless.jpg'
+import React, { useEffect, useState } from "react";
+import "./index.css";
+import niralaImage from "../../assets/images/nirala_bgless.jpg";
+import { introductionContent } from "../../utils/globalConstant";
 
 const Introduction = ({ introRef }) => {
-    return (
-        <div className='main_container' ref={introRef}>
-            <div id='menuIconStyle' />
-            <div className='main_container_2'>
-                <div>
-                    <h1 className='headerTextStyle'>Hii,</h1>
-                    <h1 className='headerTextStyle'>I'm Nirala Kumar</h1>
-                    <p className='professionTextStyle'>Software Engineer</p>
-                </div>
-                <img src={niralaImage} alt="Nirala Kumar" width="320" height="400"
-                    style={{ borderRadius: 30, borderWidth: 2, borderStyle: 'solid', borderColor: 'white' }} />
-            </div>
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % introductionContent.roles.length);
+    }, 3000); // 3 seconds
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="main_container fade-in" ref={introRef}>
+      <div id="menuIconStyle" />
+
+      <div className="main_container_2">
+        <div>
+          <div className="textSection slide-up">
+            <h1 className="headerTextStyle">{introductionContent.greeting}</h1>
+            <h1 className="headerTextStyle">{introductionContent.authorName}</h1>
+
+            {/* Rotating Job Titles */}
+            <p key={index} className="rotatingText smooth-rotate">
+              {introductionContent.roles[index]}
+            </p>
+          </div>
+          <div className="button-container">
+            <button>{introductionContent.resumeBtnLabel}</button>
+            <button>{introductionContent.hireMeBtnLabel}</button>
+          </div>
         </div>
-    )
-}
+        <img
+          src={niralaImage}
+          alt={introductionContent.profileImageAlt}
+          className="profile-image float-animation"
+          width="320"
+          height="400"
+          style={{
+            borderRadius: 30,
+            borderWidth: 2,
+            borderStyle: "solid",
+            borderColor: "white",
+          }}
+        />
+      </div>
+    </div>
+  );
+};
+
 export default Introduction;
