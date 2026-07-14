@@ -38,12 +38,14 @@ export const introductionContent = {
         "Mobile Application Developer",
         "Web Developer",
     ],
-    greeting: "Hii,",
+    greeting: "Hi,",
     authorName: "I'm Nirala Kumar",
+    description: "A passionate Software Engineer specializing in crafting high-performance, user-centric mobile and web applications. Dedicated to translating complex requirements into seamless, pixel-perfect, and scalable digital solutions.",
     resumeBtnLabel: "Resume",
     hireMeBtnLabel: "Hire me",
     profileImageAlt: "Nirala Kumar"
 }
+
 
 export const skillsContent = {
     heading: "Skills",
@@ -84,9 +86,26 @@ export const projectsContent = {
     projectsData: [
         { name: 'WeChat', className: 'inner-container' },
         { name: 'Advertisement Management', className: 'inner-container-2' },
-        { name: 'DemoApp', className: 'inner-container-3' },
+        { name: 'FlatFund', className: 'inner-container-3', link: "https://play.google.com/store/apps/details?id=com.flatfund" },
     ]
 }
+
+export const experienceData = [
+    {
+        role: "Software Engineer",
+        company: "Hidden Brains Infotech",
+        duration: "June 2023 - Present",
+        location: "Ahmedabad (Gujarat)",
+        description: [
+            "Developed and deployed high-performance cross-platform mobile applications using React Native.",
+            "Integrated Redux Toolkit for state management and optimized application load times by 25%.",
+            "Collaborated with UI/UX designers to translate Figma designs into pixel-perfect interactive interfaces.",
+            "Handled deployment and release management on Google Play Store and Apple App Store."
+        ],
+        skills: ["React Native", "React Redux", "JavaScript", "GitHub"]
+    }
+];
+
 
 export const connectContent = {
     title: "Let's Talk!",

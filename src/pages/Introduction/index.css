@@ -27,20 +27,39 @@
   display: flex;
   padding-top: 5%;
   padding-bottom: 60px;
+  gap: 30px;
 
   @media (min-width: 360px) {
     flex-direction: column-reverse;
     align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   @media (min-width: 1024px) {
     flex-direction: row;
     justify-content: space-evenly;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.textSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .textSection {
+    gap: 8px;
+    align-items: center;
   }
 }
 
 .headerTextStyle {
   color: white;
+  margin: 0;
 
   @media (min-width: 360px) {
     text-align: center;
@@ -50,6 +69,7 @@
     text-align: left;
   }
 }
+
 
 .professionTextStyle {
   font-size: 35px;
@@ -65,26 +85,42 @@
   }
 }
 
+.intro-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+@media (max-width: 1024px) {
+  .intro-text-wrapper {
+    align-items: center;
+    text-align: center;
+  }
+}
+
 .button-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-/* Mobile friendly: stack buttons on small screens */
 @media (max-width: 600px) {
   .button-container {
-    flex-direction: column;
-    gap: 10px; /*spacing between buttons*/
-    align-items: center;
-  }
-  .button-container button {
-    width: 80%; /* make buttons bigger on mobile */
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
   }
 }
 
 /* Button styles */
 .button-container button {
-  width: 100%; /* mobile-friendly width */
+  width: auto;
+  min-width: 140px;
+  max-width: 200px;
   padding: 12px 20px;
   font-size: 16px;
   font-weight: bold;
@@ -105,8 +141,7 @@
 /* Medium devices: tablets */
 @media (min-width: 600px) {
   .button-container {
-    flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
   }
 
   .button-container button {
@@ -117,7 +152,7 @@
 /* Large devices: desktops */
 @media (min-width: 1024px) {
   .button-container {
-    padding: 20px 50px;
+    justify-content: flex-start;
     gap: 20px;
   }
 
@@ -127,6 +162,7 @@
     padding: 14px 25px;
   }
 }
+
 
 .fade-in {
   opacity: 0;
@@ -213,6 +249,7 @@
   opacity: 0;
   transform: translateX(10px);
   animation: slideFade 0.8s ease forwards;
+  margin: 0;
 }
 
 @keyframes slideFade {
@@ -222,12 +259,15 @@
   }
 }
 
-/* Mobile text alignment */
+/* Mobile text alignment and scaling */
 @media (max-width: 600px) {
   .rotatingText {
     text-align: center;
+    font-size: 26px;
+    margin: 0;
   }
 }
+
 
 .smooth-rotate-exit {
   animation: smoothSlideOut 0.6s ease forwards;
@@ -262,3 +302,22 @@
     transform: translateY(0);
   }
 }
+
+.introDescription {
+  color: #cbd5e0; /* light slate gray for excellent contrast on dark background */
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 550px;
+}
+
+@media (max-width: 1024px) {
+  .introDescription {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1rem;
+  }
+}
+
+

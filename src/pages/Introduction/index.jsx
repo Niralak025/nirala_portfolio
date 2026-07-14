@@ -18,7 +18,7 @@ const Introduction = ({ introRef }) => {
       <div id="menuIconStyle" />
 
       <div className="main_container_2">
-        <div>
+        <div className="intro-text-wrapper">
           <div className="textSection slide-up">
             <h1 className="headerTextStyle">{introductionContent.greeting}</h1>
             <h1 className="headerTextStyle">{introductionContent.authorName}</h1>
@@ -27,13 +27,18 @@ const Introduction = ({ introRef }) => {
             <p key={index} className="rotatingText smooth-rotate">
               {introductionContent.roles[index]}
             </p>
+
+            {/* Impactful Description */}
+            <p className="introDescription">{introductionContent.description}</p>
           </div>
+
           <div className="button-container">
             <button>{introductionContent.resumeBtnLabel}</button>
             <button>{introductionContent.hireMeBtnLabel}</button>
           </div>
         </div>
         <img
+
           src={niralaImage}
           alt={introductionContent.profileImageAlt}
           className="profile-image float-animation"
