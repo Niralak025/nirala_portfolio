@@ -1,48 +1,176 @@
 /* Main container */
 .skills-main-container {
-    padding: 40px;
+    padding: 60px 40px;
     background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
-/* Skills grid */
-.skills-grid {
+/* Title styling */
+.fs-1 {
+    font-size: 2.5rem;
+    color: var(--footer-background, black);
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Skills Grid Layout */
+.skills-grid-layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
     width: 100%;
+    max-width: 1200px;
     justify-content: center;
 }
 
-/* Skill item */
-.skill-item {
+/* Skill Card Item */
+.skill-card-item {
     display: flex;
     flex-direction: column;
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    gap: 18px;
+}
+
+.skill-card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+    border-color: #3e58a3;
+}
+
+/* Skill Card Top Group */
+.skill-card-top {
+    display: flex;
     align-items: center;
-    text-align: center;
-    background: #fff;
-    padding: 20px;
+    gap: 16px;
+}
+
+.skill-icon-wrapper {
+    width: 50px;
+    height: 50px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease;
 }
 
-.skill-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+.skill-card-item:hover .skill-icon-wrapper {
+    background-color: #cee4ff;
 }
 
-/* Skill logo */
-.skill-logo {
-    margin-bottom: 10px;
+/* Icon Vectors */
+.skill-icon-vector {
+    font-size: 2rem;
 }
 
-/* Skill name */
-.skill-name {
-    font-size: 1.2rem;
-    color: #333;
+/* Brand specific icon colors */
+.react-native-icon { color: #61dafb; }
+.redux-icon { color: #764abc; }
+.js-icon { color: #f7df1e; }
+.java-icon { color: #f89820; }
+.github-icon { color: #24292e; }
+.html-icon { color: #e34f26; }
+.css-icon { color: #1572b6; }
+.typescript-icon { color: #3178c6; }
+.nodejs-icon { color: #339933; }
+.react-icon { color: #61dafb; }
+.gitlab-icon { color: #fc6d26; }
+.firebase-icon { color: #ffca28; }
+.api-icon { color: #4f46e5; }
+.graphql-icon { color: #e10098; }
+.cicd-icon { color: #4ade80; }
+.jenkins-icon { color: #d24939; }
+.push-notifications-icon { color: #fbbf24; }
+.state-management-icon { color: #764abc; }
+.git-icon { color: #f05032; }
+.android-studio-icon { color: #3ddc84; }
+.xcode-icon { color: #147efb; }
+.vscode-icon { color: #007acc; }
+.postman-icon { color: #ff6c37; }
+.stripe-icon { color: #6772e5; }
+.react-native-paper-icon { color: #4f46e5; }
+.deep-linking-icon { color: #2563eb; }
+.react-native-cli-icon { color: #4b5563; }
+
+/* Skill Info Group */
+.skill-info-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-card-name {
+    font-size: 1.15rem;
+    color: #1a202c;
+    font-weight: 700;
+    margin: 0;
+}
+
+.skill-card-level {
+    font-size: 0.75rem;
+    color: #718096;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+}
+
+/* Progress Container */
+.skill-progress-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.skill-progress-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+.progress-label {
+    color: #718096;
+    font-weight: 500;
+}
+
+.progress-percentage {
+    color: #1a202c;
+    font-weight: 700;
+}
+
+/* Progress Track and Fill */
+.progress-bar-track {
+    height: 6px;
+    background-color: #edf2f7;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #124893, #3e58a3);
+    border-radius: 3px;
+    transition: width 1s cubic-bezier(0.1, 1, 0.1, 1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .fs-1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    
+    .skills-main-container {
+        padding: 40px 20px;
+    }
 }

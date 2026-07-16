@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./index.css";
-import niralaImage from "../../assets/images/nirala_bgless.jpg";
+import niralaImage from "../../assets/images/nirala_new.jpg";
 import { introductionContent } from "../../utils/globalConstant";
 
-const Introduction = ({ introRef }) => {
+const Introduction = ({ introRef, onHireMeClick }) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -12,6 +12,12 @@ const Introduction = ({ introRef }) => {
     }, 3000); // 3 seconds
     return () => clearInterval(interval);
   }, []);
+
+  const handleResumeClick = () => {
+    if (introductionContent.resumeLink) {
+      window.open(introductionContent.resumeLink, '_blank', 'noopener,noreferrer');
+    }
+  };
 
   return (
     <div className="main_container fade-in" ref={introRef}>
@@ -33,8 +39,8 @@ const Introduction = ({ introRef }) => {
           </div>
 
           <div className="button-container">
-            <button>{introductionContent.resumeBtnLabel}</button>
-            <button>{introductionContent.hireMeBtnLabel}</button>
+            <button onClick={handleResumeClick}>{introductionContent.resumeBtnLabel}</button>
+            <button onClick={onHireMeClick}>{introductionContent.hireMeBtnLabel}</button>
           </div>
         </div>
         <img
@@ -49,6 +55,7 @@ const Introduction = ({ introRef }) => {
             borderWidth: 2,
             borderStyle: "solid",
             borderColor: "white",
+            objectFit: "cover",
           }}
         />
       </div>

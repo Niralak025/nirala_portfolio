@@ -2,71 +2,230 @@
 .connect-card {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    background-color: rgba(125, 182, 212, 0.6);
-    padding: 20px;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    align-items: flex-start; /* top align both columns */
+    justify-content: center;
+    background: linear-gradient(180deg, #f4f4f4 0%, #cee4ff 100%); /* gradient transition from Projects to Connect */
+    padding: 60px 40px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.03);
+    gap: 40px;
+    width: 100%;
+}
+
+/* Contact Info Panel */
+.connect-info-pane {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 450px;
     gap: 20px;
 }
 
-/* Image styling */
-.connect-image {
-    width: 350px;
-    height: auto;
-    border-radius: 10px;
+.connect-info-title, .connect-title {
+    font-size: 2.2rem;
+    color: #124893;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
-/* Content container */
+.connect-info-desc {
+    font-size: 1rem;
+    color: #4a5568;
+    line-height: 1.6;
+    margin: 0 0 10px 0;
+}
+
+.connect-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.connect-info-item-group {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+}
+
+.connect-info-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    border: 1px solid #e2e8f0;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.connect-info-item.half-width {
+    flex: 1;
+}
+
+.connect-info-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+    border-color: #3e58a3;
+}
+
+.connect-info-icon-wrapper {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+/* Social icon brand backgrounds */
+.email-icon { background-color: #ea4335; }
+.phone-icon { background-color: #3e58a3; }
+.whatsapp-icon { background-color: #25d366; }
+.linkedin-icon { background-color: #0a66c2; }
+
+.connect-info-text {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.connect-info-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.connect-info-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-top: 2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* Content Form container */
 .connect-content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-/* Title styling */
-.connect-title {
-    font-size: 2rem;
-    color: #124893;
-    text-align: center;
-    margin-bottom: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 450px;
 }
 
 /* Form styling */
 .connect-form {
     width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 28px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+/* Custom Outlined Input Styles */
+.connect-form .MuiOutlinedInput-root {
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.connect-form .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+    border-color: #cbd5e0;
+    border-width: 1.5px;
+}
+
+.connect-form .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: #3e58a3;
+}
+
+.connect-form .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #124893;
+    border-width: 2px;
+}
+
+.connect-form .MuiInputLabel-root {
+    color: #718096;
+}
+
+.connect-form .MuiInputLabel-root.Mui-focused {
+    color: #124893 !important;
 }
 
 /* Button styling */
 .connect-button {
-    background-color: #124893;
-    color: #fff;
+    background-color: #124893 !important;
+    color: #fff !important;
     width: 100%;
-    text-transform: none;
+    padding: 12px 0 !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    border-radius: 8px !important;
+    transition: background-color 0.2s ease !important;
+    box-shadow: none !important;
+}
+
+.connect-button:hover {
+    background-color: #0e3a78 !important;
+    box-shadow: 0 4px 12px rgba(18, 72, 147, 0.2) !important;
 }
 
 /* Responsive design */
+@media (max-width: 992px) {
+    .connect-card {
+        padding: 50px 30px;
+        gap: 30px;
+    }
+}
+
 @media (max-width: 768px) {
     .connect-card {
         flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        gap: 40px;
     }
 
-    .connect-image {
+    .connect-info-pane {
         width: 100%;
-        height: auto;
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .connect-info-title, .connect-title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+    }
+
+    .connect-info-desc {
+        text-align: center;
     }
 
     .connect-content {
         width: 100%;
-        padding: 20px;
+        max-width: 100%;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .connect-info-item-group {
+        flex-direction: column;
+        gap: 16px;
     }
 }

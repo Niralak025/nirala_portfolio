@@ -13,6 +13,7 @@ const Home = () => {
   const eduRef = useRef(null)
   const skillsRef = useRef(null)
   const projectRef = useRef(null)
+  const connectRef = useRef(null)
 
   const scrollToParticularSection = (item) => {
     if (item.id === 1) {
@@ -41,6 +42,15 @@ const Home = () => {
     }
   }
 
+  const scrollToConnect = () => {
+    if (connectRef.current) {
+      window.scrollTo({
+        top: connectRef.current.offsetTop,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   return (
     <>
       <SideMenu
@@ -49,7 +59,9 @@ const Home = () => {
         }}
       />
       <Introduction
-        introRef={introRef} />
+        introRef={introRef}
+        onHireMeClick={scrollToConnect}
+      />
       <Educations
         educationRef={eduRef}
       />
@@ -59,7 +71,7 @@ const Home = () => {
       <Projects
         projectRef={projectRef}
       />
-      <Connect />
+      <Connect connectRef={connectRef} />
       <Footer />
     </>
   )
