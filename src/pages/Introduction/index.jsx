@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./index.css";
-import niralaImage from "../../assets/images/nirala_bgless.jpg";
+import niralaImage from "../../assets/images/nirala_new.jpg";
 import { introductionContent } from "../../utils/globalConstant";
 
-const Introduction = ({ introRef }) => {
+const Introduction = ({ introRef, onHireMeClick }) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -13,12 +13,18 @@ const Introduction = ({ introRef }) => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleResumeClick = () => {
+    if (introductionContent.resumeLink) {
+      window.open(introductionContent.resumeLink, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
     <div className="main_container fade-in" ref={introRef}>
       <div id="menuIconStyle" />
 
       <div className="main_container_2">
-        <div>
+        <div className="intro-text-wrapper">
           <div className="textSection slide-up">
             <h1 className="headerTextStyle">{introductionContent.greeting}</h1>
             <h1 className="headerTextStyle">{introductionContent.authorName}</h1>
@@ -27,13 +33,18 @@ const Introduction = ({ introRef }) => {
             <p key={index} className="rotatingText smooth-rotate">
               {introductionContent.roles[index]}
             </p>
+
+            {/* Impactful Description */}
+            <p className="introDescription">{introductionContent.description}</p>
           </div>
+
           <div className="button-container">
-            <button>{introductionContent.resumeBtnLabel}</button>
-            <button>{introductionContent.hireMeBtnLabel}</button>
+            <button onClick={handleResumeClick}>{introductionContent.resumeBtnLabel}</button>
+            <button onClick={onHireMeClick}>{introductionContent.hireMeBtnLabel}</button>
           </div>
         </div>
         <img
+
           src={niralaImage}
           alt={introductionContent.profileImageAlt}
           className="profile-image float-animation"
@@ -44,6 +55,7 @@ const Introduction = ({ introRef }) => {
             borderWidth: 2,
             borderStyle: "solid",
             borderColor: "white",
+            objectFit: "cover",
           }}
         />
       </div>

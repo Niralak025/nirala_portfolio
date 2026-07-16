@@ -7,7 +7,7 @@ const EducationCardCell = ({ imageSrc, title, subTitle, description }) => {
             <img src={imageSrc} alt={title} className="education-card-img" />
             <div className="education-card-content">
                 <h2 className="education-card-title">{title}</h2>
-                <h4 className="education-card-title">{subTitle}</h4>
+                <h4 className="education-card-subtitle">{subTitle}</h4>
                 <p className="education-card-description">{description}</p>
             </div>
         </div>

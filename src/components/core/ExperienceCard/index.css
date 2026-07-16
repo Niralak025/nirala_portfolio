@@ -1,0 +1,117 @@
+.experience-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e1e8ed;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    width: 100%;
+    max-width: 550px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.experience-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    border-color: #3e58a3;
+}
+
+.experience-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #f0f3f6;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.experience-role {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0;
+}
+
+.experience-company {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #3e58a3;
+    margin: 4px 0 0 0;
+}
+
+.experience-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+@media (max-width: 576px) {
+    .experience-meta {
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+.experience-duration {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.experience-location {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-top: 2px;
+}
+
+.experience-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-grow: 1;
+}
+
+.experience-description {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.experience-description li {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.experience-description li:last-child {
+    margin-bottom: 0;
+}
+
+.experience-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.experience-skill-badge {
+    background-color: #cee4ff;
+    color: #1a365d;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    transition: background-color 0.2s;
+}
+
+.experience-skill-badge:hover {
+    background-color: #3e58a3;
+    color: #ffffff;
+}
